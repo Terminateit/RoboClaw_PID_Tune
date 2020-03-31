@@ -51,14 +51,14 @@ while not rospy.is_shutdown():
         if config.doubles[i].name == 'k_i':
             k_i = config.doubles[i].value
 
-    print('k_p =',k_p, ', k_d =',k_d, ', k_i =',k_i)  
-    # rc.SetM1PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
-    # rc.SetM2PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
+    # print('k_p =',k_p, ', k_d =',k_d, ', k_i =',k_i)  
+    rc.SetM1PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
+    rc.SetM2PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
 
-    # print('M2-PID: ',rc.ReadM1PositionPID(address), '\n')
-    # print('M2-PID: ',rc.ReadM2PositionPID(address), '\n')
+    print('M2-PID: ',rc.ReadM1PositionPID(address), '\n')
+    print('M2-PID: ',rc.ReadM2PositionPID(address), '\n')
 
-    # rc.SetM1VelocityPID(address, k_p, k_i, k_d)
+    rc.SetM1VelocityPID(address, k_p, k_i, k_d)
     
     rate.sleep()      
 

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<launch>
+	<include file="$(find pid_tuning)/launch/server.launch" />
+	<node pkg="pid_tuning" name="pid_coefs_tuning" type="PID_tuning.py" output="screen" />
+</launch>

@@ -55,7 +55,7 @@ while not rospy.is_shutdown():
     rc.SetM1PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
     rc.SetM2PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
 
-    print('M2-PID: ',rc.ReadM1PositionPID(address), '\n')
+    print('M1-PID: ',rc.ReadM1PositionPID(address), '\n')
     print('M2-PID: ',rc.ReadM2PositionPID(address), '\n')
 
     rc.SetM1VelocityPID(address, k_p, k_i, k_d)

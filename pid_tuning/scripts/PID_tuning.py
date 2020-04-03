@@ -53,13 +53,12 @@ while not rospy.is_shutdown():
 
     print('k_p =',k_p, ', k_d =',k_d, ', k_i =',k_i)  
 
-    rc.SetM1PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
-    rc.SetM2PositionPID(address, k_p, k_i, k_d, 1000, 0.5, 0, 1000)
+    rc.SetM1VelocityPID(address, k_p, k_d, k_i, QPPS_rev)
+    rc.SetM2VelocityPID(address, k_p, k_i, k_d, QPPS_rev)
 
-    print('M1-PID: ',rc.ReadM1PositionPID(address), '\n')
-    print('M2-PID: ',rc.ReadM2PositionPID(address), '\n')
-
-    # rc.SetM1VelocityPID(address, k_p, k_i, k_d)
+    
+    print('M1-PID-Velocity: ',rc.ReadM1VelocityPID(address), '\n')
+    print('M2-PID-Velocity: ',rc.ReadM1VelocityPID(address), '\n')
     
     rate.sleep()      
 

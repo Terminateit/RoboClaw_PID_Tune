@@ -10,6 +10,6 @@ def callback(config, level):
     return config
 
 if __name__ == "__main__":
-    rospy.init_node("gains", anonymous = False)
+    rospy.init_node("gains", anonymous = True)
     srv = Server(ReconfigureConfig, callback)
     rospy.spin()
